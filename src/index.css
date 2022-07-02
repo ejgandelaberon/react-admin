@@ -1,0 +1,204 @@
+/*====Table of Contents====*/
+/*Tailwind*/
+
+/*===components===*/
+/*Sidebar*/
+/*Navbar*/
+/*Divider*/
+/*ImageModal*/
+
+/*===pages===*/
+/*Cat*/
+/*Admin*/
+/*Login*/
+
+/*===misc===*/
+/*Header Title*/
+/*Logo*/
+/*Button*/
+/*Card*/
+/*Transition*/
+
+/*========================================*/
+/*========================================*/
+
+/*====Tailwind====*/
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*====Header Title====*/
+.header-title {
+  @apply mt-auto mb-auto mr-3 transition-1
+}
+
+/*====Logo====*/
+.App-logo {
+  @apply h-10 pointer-events-none
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/*====Sidebar====*/
+.sidebar {
+  @apply fixed top-0 left-0 bg-sky-900 text-white w-64 h-screen m-0 overflow-auto
+}
+
+.sidebar header {
+  @apply bg-sky-900 fixed h-auto w-64
+}
+
+.sidebar header>div {
+  @apply flex pt-4
+}
+
+.sidebar header>div>span {
+  @apply text-sky-200 text-lg font-bold hover:text-sky-400
+}
+
+.sidebar-items {
+  @apply text-sky-200 h-screen mt-28 ml-3 mr-3 mb-4
+}
+
+.sidebar-items li {
+  @apply flex hover:bg-sky-400 mb-2 p-2 rounded-md transition-1
+}
+
+.active-item {
+  @apply bg-sky-400 text-sky-900
+}
+
+/*====Navbar====*/
+.navbar {
+  @apply bg-white fixed top-0 right-0 w-[calc(100vw-256px)] ml-64 h-[4.5rem] shadow-md overflow-auto
+}
+
+.navbar img {
+  @apply h-10 rounded-full ml-3 mr-3
+}
+
+.user-title {
+  @apply text-sky-400 hover:text-sky-600 mt-2 mr-3 transition-1
+}
+
+.logout-link {
+  @apply mr-3 mt-auto mb-2 flex text-sky-800 hover:text-sky-600
+}
+
+/*====Login====*/
+.login-container {
+  @apply bg-white h-auto w-[25rem] mt-10 m-auto shadow-md
+}
+
+.login-container header {
+  @apply relative bg-sky-50 h-20 w-auto p-2 border-b border-sky-300
+}
+
+.login-container header>div {
+  @apply absolute flex inset-0 w-fit h-fit m-auto
+}
+
+.login-container header>div>span {
+  @apply text-sky-400 text-2xl font-bold hover:text-sky-500
+}
+
+/*====Cat====*/
+.cat-descrip {
+  @apply ml-2
+}
+
+.cat-descrip p {
+  @apply font-semibold
+}
+
+.cat-descrip p > span {
+  @apply text-sky-400 hover:text-sky-600 transition-1
+}
+
+.cat-img {
+  @apply h-32 cursor-zoom-in
+}
+
+/*====Admin====*/
+.page-container {
+  @apply bg-white mt-[5.5rem] ml-[17rem] mr-4 p-4 h-auto
+}
+
+/*====Button====*/
+.btn {
+  @apply px-3 py-2 shadow-sm rounded transition-1
+  leading-snug whitespace-nowrap text-base font-semibold
+}
+
+.btn-primary {
+  @apply bg-sky-700 text-sky-50 hover:bg-sky-600
+}
+
+.btn-block {
+  @apply w-full
+}
+
+.btn-disabled {
+  @apply bg-sky-900 text-sky-700 cursor-not-allowed
+}
+
+/*====Divider====*/
+.divider-wrap {
+  @apply bg-sky-900 relative flex py-5 items-center
+}
+
+.sides {
+  @apply flex-grow border-t border-sky-400
+}
+
+.divider-body {
+  @apply flex-shrink mx-4 text-sky-400
+}
+
+/*====ImageModal====*/
+.image-overlay {
+  @apply fixed top-0 left-0 right-0 w-full h-full flex items-center bg-sky-900/90
+}
+
+.image-overlay img {
+  @apply block max-w-[60%] max-h-[80%] mt-[60px] m-auto shadow-2xl
+}
+
+.image-overlay > span {
+  @apply absolute top-5 right-5 text-3xl text-black z-[999] cursor-pointer
+}
+
+/*====Card====*/
+.card-container {
+  @apply mt-2 p-2
+}
+
+.card {
+  @apply bg-white w-[30rem] h-auto shadow-lg pb-[1px] mb-2
+}
+
+.card header {
+  @apply bg-sky-200 hover:bg-sky-300 text-sky-900 hover:text-sky-800 p-2 text-xl transition-1
+}
+
+.card-content {
+  @apply bg-white m-2 p-2 border-2 border-sky-200 hover:border-sky-300 rounded-lg transition-1
+}
+
+/*====Transition====*/
+.transition-1 {
+  @apply transition duration-300 ease-in-out
+}
