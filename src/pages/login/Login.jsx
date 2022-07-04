@@ -15,6 +15,17 @@ const Login = () => {
         </div>
       </header>
 
+      <div className='form-control'>
+        <div className='form-group'>
+          <label htmlFor="">Username/Email</label>
+          <input type="text" />
+        </div>
+        <div className='form-group'>
+          <label htmlFor="">Password</label>
+          <input type="password" />
+        </div>
+      </div>
+
       <div className='p-4'>
         <button onClick={login} className='btn btn-primary btn-block'>
           Login
