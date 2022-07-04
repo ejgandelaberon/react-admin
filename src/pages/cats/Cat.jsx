@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import ImageModal from '../../components/image-modal/ImageModal'
 import CatNotFound from '../../assets/cat-not-found.jpeg'
+import Rating from '../../components/rating/Rating'
 
 const Cat = ({cat}) => {
   const [clickedImage, setClickedImage] = useState()
@@ -18,16 +19,19 @@ const Cat = ({cat}) => {
   return (
     <div className="card">
       <header>
-        Cat Breed Information
+        {cat.name}
       </header>
 
       <div className="card-content">
         <div className='flex'>
           <img src={checkImgUrl()} alt="" className="cat-img" onClick={() => showImage(checkImgUrl(), cat.id)}/>
           <div className='cat-descrip'>
-            <p>Breed: <span>{cat.name}</span></p>
             <p>Origin: <span>{cat.origin}</span></p>
-            <p>Temperament: <span>{cat.temperament}</span></p>
+            {/* <p>Temperament: <span>{cat.temperament}</span></p> */}
+            <Rating ratingName={'Intelligence'} rateLevel={cat.intelligence}/>
+            <Rating ratingName={'Energy Level'} rateLevel={cat.energy_level}/>
+            <Rating ratingName={'Dog Friendly'} rateLevel={cat.dog_friendly}/>
+            <Rating ratingName={'Stranger Friendly'} rateLevel={cat.stranger_friendly}/>
           </div>
         </div>
       </div>
