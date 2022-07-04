@@ -17,6 +17,8 @@
 /*Logo*/
 /*Button*/
 /*Card*/
+/*Form*/
+/*Color Scheme*/
 /*Transition*/
 
 /*========================================*/
@@ -26,6 +28,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  @apply bg-slate-200
+}
 
 /*====Header Title====*/
 .header-title {
@@ -54,11 +60,11 @@
 
 /*====Sidebar====*/
 .sidebar {
-  @apply fixed top-0 left-0 bg-sky-900 text-white w-64 h-screen m-0 overflow-auto
+  @apply fixed top-0 left-0 prm-bg text-white w-64 h-screen m-0 overflow-auto
 }
 
 .sidebar header {
-  @apply bg-sky-900 fixed h-auto w-64
+  @apply prm-bg fixed h-auto w-64
 }
 
 .sidebar header>div {
@@ -66,11 +72,11 @@
 }
 
 .sidebar header>div>span {
-  @apply text-sky-200 text-lg font-bold hover:text-sky-400
+  @apply text-lg font-bold sec-text hover:text-sky-400
 }
 
 .sidebar-items {
-  @apply text-sky-200 h-screen mt-28 ml-3 mr-3 mb-4
+  @apply h-[calc(100vh-8rem)] mt-28 ml-3 mr-3 mb-4 sec-text
 }
 
 .sidebar-items li {
@@ -91,20 +97,20 @@
 }
 
 .user-title {
-  @apply text-sky-400 hover:text-sky-600 mt-2 mr-3 transition-1
+  @apply prm-text prm-hover mt-2 mr-3 transition-1
 }
 
 .logout-link {
-  @apply mr-3 mt-auto mb-2 flex text-sky-800 hover:text-sky-600
+  @apply mr-3 mt-auto mb-2 flex prm-text prm-hover transition-1
 }
 
 /*====Login====*/
 .login-container {
-  @apply bg-white h-auto w-[25rem] mt-10 m-auto shadow-md
+  @apply bg-white h-auto w-[25rem] mt-10 m-auto shadow-md rounded-md
 }
 
 .login-container header {
-  @apply relative bg-sky-50 h-20 w-auto p-2 border-b border-sky-300
+  @apply relative prm-bg h-20 w-auto p-2 border-b border-sky-300 rounded-t-md
 }
 
 .login-container header>div {
@@ -112,7 +118,7 @@
 }
 
 .login-container header>div>span {
-  @apply text-sky-400 text-2xl font-bold hover:text-sky-500
+  @apply text-2xl font-bold sec-text hover:text-sky-400 transition-1
 }
 
 /*====Cat====*/
@@ -134,17 +140,17 @@
 
 /*====Admin====*/
 .page-container {
-  @apply bg-white mt-[5.5rem] ml-[17rem] mr-4 p-4 h-auto
+  @apply bg-white mt-[5.5rem] ml-[17rem] mr-4 mb-4 p-4 min-h-[calc(100vh-6.5rem)] min-w-min h-auto prm-text rounded-md
 }
 
 /*====Button====*/
 .btn {
-  @apply px-3 py-2 shadow-sm rounded transition-1
+  @apply px-3 py-2 shadow-sm rounded-md transition-1
   leading-snug whitespace-nowrap text-base font-semibold
 }
 
 .btn-primary {
-  @apply bg-sky-700 text-sky-50 hover:bg-sky-600
+  @apply prm-bg sec-text hover:bg-sky-600 focus:outline-none
 }
 
 .btn-block {
@@ -157,7 +163,7 @@
 
 /*====Divider====*/
 .divider-wrap {
-  @apply bg-sky-900 relative flex py-5 items-center
+  @apply relative flex py-5 items-center
 }
 
 .sides {
@@ -187,15 +193,73 @@
 }
 
 .card {
-  @apply bg-white w-[30rem] h-auto shadow-lg pb-[1px] mb-2
+  @apply bg-white min-w-[32rem] h-auto shadow-lg pb-[1px] mb-2
 }
 
 .card header {
-  @apply bg-sky-200 hover:bg-sky-300 text-sky-900 hover:text-sky-800 p-2 text-xl transition-1
+  @apply prm-bg sec-text sec-hover p-2 text-xl transition-1
 }
 
 .card-content {
-  @apply bg-white m-2 p-2 border-2 border-sky-200 hover:border-sky-300 rounded-lg transition-1
+  @apply bg-white m-2 p-2 border-2 sec-border sec-border-hover rounded-lg transition-1
+}
+
+/*====Form====*/
+.form-control {
+  @apply p-4
+}
+
+.form-group {
+  @apply flex flex-col
+}
+
+.form-group label {
+  @apply prm-text prm-hover text-lg  transition-1
+}
+
+.form-group input {
+  @apply bg-slate-100 prm-text focus:outline-none px-2 py-1 rounded-md
+}
+
+/*====Color Scheme====*/
+.prm-bg {
+  @apply bg-sky-700
+}
+
+.prm-text {
+  @apply text-sky-700
+}
+
+.prm-hover {
+  @apply hover:text-sky-500
+}
+
+.prm-border {
+  @apply border-sky-700
+}
+
+.prm-border-hover {
+  @apply hover:border-sky-500
+}
+
+.sec-bg {
+  @apply bg-sky-200
+}
+
+.sec-text {
+  @apply text-sky-100
+}
+
+.sec-hover {
+  @apply hover:text-sky-400
+}
+
+.sec-border {
+  @apply border-sky-100
+}
+
+.sec-border-hover {
+  @apply hover:border-sky-400
 }
 
 /*====Transition====*/

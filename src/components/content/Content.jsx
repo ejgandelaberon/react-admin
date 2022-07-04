@@ -5,12 +5,14 @@ import CatRoute from '../../routes/CatRoute'
 
 const Content = () => {
   return (
-    <Routes>
-      <Route path='/' element={<Navigate to='home'/>}/>
-      <Route path='home' element={<Home/>}/>
-      <Route path='cats' element={<CatRoute/>}/>
-      <Route path='reports' element={<Reports/>}/>
-    </Routes>
+    <div className='page-container'>
+      <Routes>
+        <Route path='/' element={<Navigate to='home'/>}/>
+        <Route path='home' element={<Home/>}/>
+        <Route path='cats' element={<CatRoute/>}/>
+        <Route path='reports' element={<Reports/>}/>
+      </Routes>
+    </div>
   )
 }
 
