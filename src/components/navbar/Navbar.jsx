@@ -6,10 +6,10 @@ import avatar from '../../assets/ejberon.jpeg'
 const Navbar = () => {
   return (
     <div className='navbar'>
-      <div className='flex flex-row justify-between'>
-        <div className='flex pt-4'>
-          <img src={avatar} alt=""/>
-          <span className='user-title'>
+      <div className='navbar-content'>
+        <div className='user-title-group'>
+          <img src={avatar} alt="User avatar"/>
+          <span>
             EJ BERON | Web Dev
           </span>
         </div>

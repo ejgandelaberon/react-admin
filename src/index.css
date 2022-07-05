@@ -18,6 +18,7 @@
 /*Button*/
 /*Card*/
 /*Form*/
+/*Border*/
 /*Color Scheme*/
 /*Transition*/
 
@@ -79,6 +80,10 @@ body {
   @apply h-[calc(100vh-8rem)] mt-28 ml-3 mr-3 mb-4 sec-text
 }
 
+.sidebar-link {
+  @apply hover:text-sky-900 focus:outline-none
+}
+
 .sidebar-items li {
   @apply flex hover:bg-sky-400 mb-2 p-2 rounded-md transition-1
 }
@@ -92,16 +97,24 @@ body {
   @apply bg-white fixed top-0 right-0 w-[calc(100vw-256px)] ml-64 h-[4.5rem] shadow-md overflow-auto
 }
 
-.navbar img {
+.navbar-content {
+  @apply flex flex-row justify-between pt-4
+}
+
+.user-title-group {
+  @apply flex min-w-fit
+}
+
+.user-title-group img {
   @apply h-10 rounded-full ml-3 mr-3
 }
 
-.user-title {
-  @apply prm-text prm-hover mt-2 mr-3 transition-1
+.user-title-group span {
+  @apply prm-text prm-hover mt-2 mr-3 transition-1 min-w-fit
 }
 
 .logout-link {
-  @apply mr-3 mt-auto mb-2 flex prm-text prm-hover transition-1
+  @apply mr-3 mt-auto mb-2 flex prm-text prm-hover transition-1 min-w-fit border-focus
 }
 
 /*====Login====*/
@@ -110,7 +123,7 @@ body {
 }
 
 .login-container header {
-  @apply relative prm-bg h-20 w-auto p-2 border-b border-sky-300 rounded-t-md
+  @apply relative prm-bg h-20 w-auto p-2 rounded-t-md
 }
 
 .login-container header>div {
@@ -143,6 +156,18 @@ body {
   @apply bg-white mt-[5.5rem] ml-[17rem] mr-4 mb-4 p-4 min-h-[calc(100vh-6.5rem)] min-w-min h-auto prm-text rounded-md
 }
 
+.page-title {
+  @apply mb-8
+}
+
+.page-toolbar {
+  @apply flex justify-between
+}
+
+.page-tools {
+
+}
+
 /*====Button====*/
 .btn {
   @apply px-3 py-2 shadow-sm rounded-md transition-1
@@ -150,7 +175,7 @@ body {
 }
 
 .btn-primary {
-  @apply prm-bg sec-text hover:bg-sky-600 focus:outline-none
+  @apply prm-bg sec-text hover:bg-sky-600 border-focus
 }
 
 .btn-block {
@@ -158,7 +183,7 @@ body {
 }
 
 .btn-disabled {
-  @apply bg-sky-900 text-sky-700 cursor-not-allowed
+  @apply bg-sky-900 text-sky-700 cursor-not-allowed border-focus
 }
 
 /*====Divider====*/
@@ -197,7 +222,7 @@ body {
 }
 
 .card header {
-  @apply prm-bg sec-text sec-hover p-2 text-xl transition-1
+  @apply prm-bg sec-text sec-hover pl-3 p-2 text-xl transition-1
 }
 
 .card-content {
@@ -210,7 +235,7 @@ body {
 }
 
 .form-group {
-  @apply flex flex-col
+  @apply flex flex-col mb-3
 }
 
 .form-group label {
@@ -218,7 +243,12 @@ body {
 }
 
 .form-group input {
-  @apply bg-slate-100 prm-text focus:outline-none px-2 py-1 rounded-md
+  @apply bg-slate-100 prm-text border-focus px-2 py-1
+}
+
+/*====Border====*/
+.border-focus {
+  @apply focus:outline-none focus:ring focus:border-sky-500 rounded-md
 }
 
 /*====Color Scheme====*/
