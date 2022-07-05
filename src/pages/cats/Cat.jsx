@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import ImageModal from '../../components/image-modal/ImageModal'
+import ImageModal from '../../components/modals/image-modal/ImageModal'
 import CatNotFound from '../../assets/cat-not-found.jpeg'
 import Rating from '../../components/rating/Rating'
 
