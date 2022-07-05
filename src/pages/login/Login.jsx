@@ -25,7 +25,7 @@ const Login = () => {
           <input type="password" />
         </div>
       </div>
-
+      <hr />
       <div className='p-4'>
         <button onClick={login} className='btn btn-primary btn-block'>
           Login
