@@ -7,7 +7,7 @@ import { IconContext } from 'react-icons'
 
 const Sidebar = () => {
   const [sidebarMenu, setSidebarMenu] = useState({
-    activeItem: '',
+    activeItem: SidebarData[0],
     items: SidebarData
   })
   const toggleActive = (index) => {
@@ -38,7 +38,7 @@ const Sidebar = () => {
           {
             sidebarMenu.items.map((item, index) => (
               <IconContext.Provider key={index} value={{ className: "mt-auto mb-auto text-xl" }}>
-                <Link key={index} to={item.path} className='hover:text-sky-900' onClick={() => toggleActive(index)}>
+                <Link key={index} to={item.path} className='sidebar-link' onClick={() => toggleActive(index)}>
                   <li className={setActive(index)}>
                     {item.icon}
                     <span className='ml-4'>{item.title}</span>
