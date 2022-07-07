@@ -1,7 +1,12 @@
+import { useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
 import logo from '../../assets/logo.svg'
 
 const Login = () => {
+  const emailRef = useRef()
+  const passwordRef = useRef()
+  const passwordConfirmRef = useRef()
+
   const nav = useNavigate()
   const login = () => {
     nav('/admin')
@@ -17,8 +22,8 @@ const Login = () => {
 
       <div className='form-control'>
         <div className='form-group'>
-          <label htmlFor="">Username/Email</label>
-          <input type="text" />
+          <label htmlFor="">Email</label>
+          <input type="email" />
         </div>
         <div className='form-group'>
           <label htmlFor="">Password</label>

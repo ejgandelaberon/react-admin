@@ -1,7 +1,8 @@
 import { useState } from 'react'
-import ImageModal from '../../components/modals/image-modal/ImageModal'
+import ImageModal from '../../components/modals/ImageModal'
 import CatNotFound from '../../assets/cat-not-found.jpeg'
-import Rating from '../../components/rating/Rating'
+import Rating from '../../components/Rating'
+import Card from '../../components/Card'
 
 const Cat = ({cat}) => {
   const [clickedImage, setClickedImage] = useState()
@@ -17,12 +18,8 @@ const Cat = ({cat}) => {
   }
 
   return (
-    <div className="card">
-      <header>
-        {cat.name}
-      </header>
-
-      <div className="card-content">
+    
+    <Card headerTitle={cat.name}>
         <div className='flex'>
           <img src={checkImgUrl()} alt="" className="cat-img" onClick={() => showImage(checkImgUrl(), cat.id)}/>
           <div className='cat-descrip'>
@@ -34,10 +31,9 @@ const Cat = ({cat}) => {
             <Rating ratingName={'Stranger Friendly'} rateLevel={cat.stranger_friendly}/>
           </div>
         </div>
-      </div>
 
       {clickedImage && <ImageModal image={clickedImage} setImage={setClickedImage}/>}
-    </div>
+    </Card>
     
   )
 }

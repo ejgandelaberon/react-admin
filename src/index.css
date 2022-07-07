@@ -3,20 +3,15 @@
 
 /*===components===*/
 /*Sidebar*/
-/*Navbar*/
-/*Divider*/
-/*ImageModal*/
 
 /*===pages===*/
 /*Cat*/
-/*Admin*/
 /*Login*/
 
 /*===misc===*/
 /*Header Title*/
 /*Logo*/
 /*Button*/
-/*Card*/
 /*Form*/
 /*Border*/
 /*Color Scheme*/
@@ -60,61 +55,8 @@ body {
 }
 
 /*====Sidebar====*/
-.sidebar {
-  @apply fixed top-0 left-0 prm-bg text-white w-64 h-screen m-0 overflow-auto
-}
-
-.sidebar header {
-  @apply prm-bg fixed h-auto w-64
-}
-
-.sidebar header>div {
-  @apply flex pt-4
-}
-
-.sidebar header>div>span {
-  @apply text-lg font-bold sec-text hover:text-sky-400
-}
-
-.sidebar-items {
-  @apply h-[calc(100vh-8rem)] mt-28 ml-3 mr-3 mb-4 sec-text
-}
-
-.sidebar-link {
-  @apply hover:text-sky-900 focus:outline-none
-}
-
-.sidebar-items li {
-  @apply flex hover:bg-sky-400 mb-2 p-2 rounded-md transition-1
-}
-
-.active-item {
+.active {
   @apply bg-sky-400 text-sky-900
-}
-
-/*====Navbar====*/
-.navbar {
-  @apply bg-white fixed top-0 right-0 w-[calc(100vw-256px)] ml-64 h-[4.5rem] shadow-md overflow-auto
-}
-
-.navbar-content {
-  @apply flex flex-row justify-between pt-4
-}
-
-.user-title-group {
-  @apply flex min-w-fit
-}
-
-.user-title-group img {
-  @apply h-10 rounded-full ml-3 mr-3
-}
-
-.user-title-group span {
-  @apply prm-text prm-hover mt-2 mr-3 transition-1 min-w-fit
-}
-
-.logout-link {
-  @apply mr-3 mt-auto mb-2 flex prm-text prm-hover transition-1 min-w-fit border-focus
 }
 
 /*====Login====*/
@@ -151,23 +93,6 @@ body {
   @apply h-32 cursor-zoom-in
 }
 
-/*====Admin====*/
-.page-container {
-  @apply bg-white mt-[5.5rem] ml-[17rem] mr-4 mb-4 p-4 min-h-[calc(100vh-6.5rem)] min-w-min h-auto prm-text rounded-md
-}
-
-.page-title {
-  @apply mb-8
-}
-
-.page-toolbar {
-  @apply flex justify-between
-}
-
-.page-tools {
-
-}
-
 /*====Button====*/
 .btn {
   @apply px-3 py-2 shadow-sm rounded-md transition-1
@@ -186,47 +111,9 @@ body {
   @apply bg-sky-900 text-sky-700 cursor-not-allowed border-focus
 }
 
-/*====Divider====*/
-.divider-wrap {
-  @apply relative flex py-5 items-center
-}
-
-.sides {
-  @apply flex-grow border-t border-sky-400
-}
-
-.divider-body {
-  @apply flex-shrink mx-4 text-sky-400
-}
-
-/*====ImageModal====*/
-.image-overlay {
-  @apply fixed top-0 left-0 right-0 w-full h-full flex items-center bg-sky-900/90
-}
-
-.image-overlay img {
-  @apply block max-w-[60%] max-h-[80%] mt-[60px] m-auto shadow-2xl
-}
-
-.image-overlay > span {
-  @apply absolute top-5 right-5 text-3xl text-black z-[999] cursor-pointer
-}
-
 /*====Card====*/
 .card-container {
   @apply mt-2 p-2
-}
-
-.card {
-  @apply bg-white min-w-[32rem] h-auto shadow-lg pb-[1px] mb-2
-}
-
-.card header {
-  @apply prm-bg sec-text sec-hover pl-3 p-2 text-xl transition-1
-}
-
-.card-content {
-  @apply bg-white m-2 p-2 border-2 sec-border sec-border-hover rounded-lg transition-1
 }
 
 /*====Form====*/

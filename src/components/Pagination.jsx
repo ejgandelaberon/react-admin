@@ -1,5 +1,3 @@
-import React from 'react'
-
 const Pagination = ({next, prev, current, data, limit}) => {
   return (
     <>

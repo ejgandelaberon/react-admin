@@ -1,6 +1,6 @@
 import Sidebar from "../components/sidebar/Sidebar"
-import Navbar from "../components/navbar/Navbar"
-import Content from "../components/content/Content"
+import Navbar from "../components/Navbar"
+import Content from "../components/Content"
 
 const Admin = () => {
   return (

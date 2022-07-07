@@ -1,7 +1,8 @@
 import { useState, useEffect, useMemo } from "react"
 import Cats from "../pages/cats/Cats"
-import Pagination from "../components/pagination/Pagination"
-import SearchInput from "../components/searchInput/SearchInput"
+import Pagination from "../components/Pagination"
+import SearchInput from "../components/SearchInput"
+import Toolbar from "../components/Toolbar"
 
 const CatRoute = () => {
   const apiKey = '4f5908f5-5b46-4371-b504-2845925ca306'
@@ -50,12 +51,9 @@ const CatRoute = () => {
 
   return (
     <>
-      <div className="page-title page-toolbar">
-        <p>Cats - thecatapi.com</p>
-        <div className="page-tools">
-          <SearchInput placeholder="Search a cat"/>
-        </div>
-      </div>
+      <Toolbar pageTitle={'Cats - thecatapi.com'}>
+        <SearchInput placeholder="Search a cat"/>
+      </Toolbar>
       <Pagination next={gotoNext} prev={gotoPrev} current={page} data={cats} limit={limit}/>
 
       <div className="card-container flex flex-wrap justify-around">
