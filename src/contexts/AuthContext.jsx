@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { auth } from '../firebase'
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "firebase/auth";
+import { auth, createUser, signIn, editEmail, editPassword } from '../firebase'
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 
 const AuthContext = React.createContext()
 
@@ -12,16 +12,24 @@ export const AuthProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState()
   const [loading, setLoading] = useState(true)
 
-  const createUser = async (email, password) => {
-    return await createUserWithEmailAndPassword(auth, email, password)
+  const createNewUser = async (email, password) => {
+    return await createUser(auth, email, password)
   }
 
-  const logIn = async (email, password) => {
-    return await signInWithEmailAndPassword(auth, email, password)
+  const login = async (email, password) => {
+    return await signIn(auth, email, password)
   }
 
-  const logOut = () => {
-    return signOut
+  const logout = () => {
+    return auth.signOut()
+  }
+
+  const updateUserEmail = (user, email) => {
+    return editEmail(user, email)
+  }
+
+  const updatePassword = (user, password) => {
+    return editPassword(user, password)
   }
   
   useEffect(() => {
@@ -35,9 +43,11 @@ export const AuthProvider = ({ children }) => {
 
   const value = {
     currentUser,
-    createUser,
-    logIn,
-    logOut
+    createNewUser,
+    login,
+    logout,
+    updateUserEmail,
+    updatePassword
   }
   return (
     <AuthContext.Provider value={value}>
