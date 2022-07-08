@@ -1,13 +1,13 @@
-import { useRef, useState } from 'react'
+import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import logo from '../../assets/logo.svg'
 import FormInput from '../../components/input/FormInput'
 import { useAuth } from '../../contexts/AuthContext'
 
 const Login = () => {
-  const emailRef = useRef()
-  const passwordRef = useRef()
-  const { logIn } = useAuth()
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const {login} = useAuth()
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
   const nav = useNavigate()
@@ -19,8 +19,9 @@ const Login = () => {
       setError('')
       setLoading(true)
 
-      const response = await logIn(emailRef.current.value, passwordRef.current.value)
-      console.log(response.user.email);
+      const response = await login(email, password)
+      console.log(response.user.email)
+      e.target.reset()
       nav('/admin')
     } catch (error) {
       console.log(error);
@@ -43,8 +44,8 @@ const Login = () => {
 
         <form onSubmit={handleSubmit}>
           <div className='form-control'>
-            <FormInput refData={emailRef} label='Email' inputType='email' />
-            <FormInput refData={passwordRef} label='Password' inputType='password' />
+            <FormInput valueData={email} onChangeData={e => setEmail(e.target.value)} label='Email' inputType='email' />
+            <FormInput valueData={password} onChangeData={e => setPassword(e.target.value)} label='Password' inputType='password' />
           </div>
           
           <div className='p-4'>
