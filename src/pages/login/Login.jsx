@@ -1,40 +1,58 @@
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import logo from '../../assets/logo.svg'
+import FormInput from '../../components/input/FormInput'
+import { useAuth } from '../../contexts/AuthContext'
 
 const Login = () => {
   const emailRef = useRef()
   const passwordRef = useRef()
-  const passwordConfirmRef = useRef()
-
+  const { logIn } = useAuth()
+  const [error, setError] = useState('')
+  const [loading, setLoading] = useState(false)
   const nav = useNavigate()
-  const login = () => {
-    nav('/admin')
-  }
-  return (
-    <div className='login-container'>
-      <header>
-        <div>
-          <img src={logo} alt="" className='App-logo' />
-          <span className='header-title'>REACT LOGIN</span>
-        </div>
-      </header>
 
-      <div className='form-control'>
-        <div className='form-group'>
-          <label htmlFor="">Email</label>
-          <input type="email" />
-        </div>
-        <div className='form-group'>
-          <label htmlFor="">Password</label>
-          <input type="password" />
-        </div>
-      </div>
-      <hr />
-      <div className='p-4'>
-        <button onClick={login} className='btn btn-primary btn-block'>
-          Login
-        </button>
+  async function handleSubmit(e) {
+    e.preventDefault()
+
+    try {
+      setError('')
+      setLoading(true)
+
+      const response = await logIn(emailRef.current.value, passwordRef.current.value)
+      console.log(response.user.email);
+      nav('/admin')
+    } catch (error) {
+      console.log(error);
+      setError(`Failed to sign in. \n${error}`)
+    }
+
+    setLoading(false)
+  }
+
+  return (
+    <div className='flex items-center justify-center bg-gradient-to-r from-cyan-50 to-blue-300 h-screen min-h-fit'>
+      {error && alert(error)}
+      <div className='bg-white bg-opacity-40 h-auto w-[25rem] shadow-2xl rounded-xl'>
+        <header className='relative h-20 w-auto p-2 rounded-t-xl'>
+          <div className='absolute flex inset-0 w-fit h-fit m-auto'>
+            <img src={logo} alt="" className='App-logo' />
+            <span className='header-title text-2xl font-bold prm-text hover:text-sky-400 transition-1'>REACT LOGIN</span>
+          </div>
+        </header>
+
+        <form onSubmit={handleSubmit}>
+          <div className='form-control'>
+            <FormInput refData={emailRef} label='Email' inputType='email' />
+            <FormInput refData={passwordRef} label='Password' inputType='password' />
+          </div>
+          
+          <div className='p-4'>
+            <button type='submit' disabled={loading} className={`btn btn-primary btn-block ${loading ? 'cursor-not-allowed' : ''}`}>
+              Login
+            </button>
+          </div>
+        </form>
       </div>
     </div>
   )
