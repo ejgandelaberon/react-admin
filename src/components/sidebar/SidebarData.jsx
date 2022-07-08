@@ -25,6 +25,12 @@ const SidebarData = [
     id: 'users',
     icon: <Fa.FaUsers/>
   },
+  {
+    title: 'User Profile',
+    path: 'userProfile',
+    id: 'userProfile',
+    icon: <Fa.FaUserCog/>
+  },
   // {
   //   title: 'Link 1',
   //   path: 'users',
