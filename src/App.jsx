@@ -1,16 +1,20 @@
 import { Routes, Route, Navigate } from 'react-router-dom'
 import Admin from './pages/Admin'
 import Login from './pages/login/Login'
+import PageNotFound from './components/PageNotFound'
+import { AuthProvider } from './contexts/AuthContext'
 
 function App() {
-
   return (
     <>
-      <Routes>
-        <Route path='/' element={<Navigate to='/admin'/>}/>
-        <Route path='/admin/*' element={<Admin/>}/>
-        <Route path='/login' element={<Login/>}/>
-      </Routes>
+      <AuthProvider>
+        <Routes>
+          <Route index element={<Navigate to='/admin'/>}/>
+          <Route path='/admin/*' element={<Admin/>}/>
+          <Route path='/login' element={<Login/>}/>
+          <Route path='*' element={<PageNotFound/>}/>
+        </Routes>
+      </AuthProvider>
     </>
   )
 }
