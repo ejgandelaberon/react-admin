@@ -1,4 +1,4 @@
-import { Routes, Route, Navigate } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 import Home from '../pages/Home'
 import Reports from '../pages/Reports'
 import CatRoute from '../routes/CatRoute'
@@ -6,6 +6,9 @@ import UserRoute from '../routes/UserRoute'
 import Users from '../pages/users/Users'
 import CreateUser from '../pages/users/CreateUser'
 import PageNotFound from './PageNotFound'
+import UserProfileRoute from '../routes/UserProfileRoute'
+import UserInfo from '../pages/user-settings/UserInfo'
+import { UserUpdate } from '../pages/user-settings/UserUpdate'
 
 const Content = () => {
   return (
@@ -24,6 +27,11 @@ const Content = () => {
         <Route path='users' element={<UserRoute/>}>
           <Route index element={<Users/>}/>
           <Route path='create' element={<CreateUser/>}/>
+        </Route>
+
+        <Route path='userProfile' element={<UserProfileRoute/>}>
+          <Route index element={<UserInfo/>}/>
+          <Route path='edit' element={<UserUpdate/>}/>
         </Route>
 
         <Route path='*' element={<PageNotFound/>}/>
