@@ -6,7 +6,6 @@
 
 /*===pages===*/
 /*Cat*/
-/*Login*/
 
 /*===misc===*/
 /*Header Title*/
@@ -34,6 +33,10 @@ body {
   @apply mt-auto mb-auto mr-3 transition-1
 }
 
+.page-header {
+  @apply text-lg font-semibold mb-10
+}
+
 /*====Logo====*/
 .App-logo {
   @apply h-10 pointer-events-none
@@ -59,23 +62,6 @@ body {
   @apply bg-sky-400 text-sky-900
 }
 
-/*====Login====*/
-.login-container {
-  @apply bg-white h-auto w-[25rem] mt-10 m-auto shadow-md rounded-md
-}
-
-.login-container header {
-  @apply relative prm-bg h-20 w-auto p-2 rounded-t-md
-}
-
-.login-container header>div {
-  @apply absolute flex inset-0 w-fit h-fit m-auto
-}
-
-.login-container header>div>span {
-  @apply text-2xl font-bold sec-text hover:text-sky-400 transition-1
-}
-
 /*====Cat====*/
 .cat-descrip {
   @apply ml-2
@@ -95,12 +81,11 @@ body {
 
 /*====Button====*/
 .btn {
-  @apply px-3 py-2 shadow-sm rounded-md transition-1
-  leading-snug whitespace-nowrap text-base font-semibold
+  @apply px-4 py-2 shadow-md rounded-lg transition-1 leading-snug whitespace-nowrap text-base
 }
 
 .btn-primary {
-  @apply prm-bg sec-text hover:bg-sky-600 border-focus
+  @apply prm-bg sec-text hover:bg-sky-600 focus:outline-none
 }
 
 .btn-block {
@@ -108,7 +93,7 @@ body {
 }
 
 .btn-disabled {
-  @apply bg-sky-900 text-sky-700 cursor-not-allowed border-focus
+  @apply bg-sky-900 text-sky-700 cursor-not-allowed focus:outline-none
 }
 
 /*====Card====*/
@@ -118,24 +103,16 @@ body {
 
 /*====Form====*/
 .form-control {
+  @apply flex flex-col gap-y-6 p-4
+}
+
+.form-spacer {
   @apply p-4
-}
-
-.form-group {
-  @apply flex flex-col mb-3
-}
-
-.form-group label {
-  @apply prm-text prm-hover text-lg  transition-1
-}
-
-.form-group input {
-  @apply bg-slate-100 prm-text border-focus px-2 py-1
 }
 
 /*====Border====*/
 .border-focus {
-  @apply focus:outline-none focus:ring focus:border-sky-500 rounded-md
+  @apply focus:outline-none focus:border-[1px] focus:border-sky-600
 }
 
 /*====Color Scheme====*/
