@@ -1,4 +1,5 @@
 import { useState, useEffect, useMemo } from "react"
+import RouteContainer from "../components/RouteContainer"
 import Cats from "../pages/cats/Cats"
 import Pagination from "../components/Pagination"
 import SearchInput from "../components/SearchInput"
@@ -54,14 +55,17 @@ const CatRoute = () => {
       <Toolbar pageTitle={'Cats - thecatapi.com'}>
         <SearchInput placeholder="Search a cat"/>
       </Toolbar>
-      <Pagination next={gotoNext} prev={gotoPrev} current={page} data={cats} limit={limit}/>
 
-      <div className="card-container flex flex-wrap justify-around">
-        <Cats
-          cats={cats}
-          loading={loading}
-        />
-      </div>
+      <RouteContainer>
+        <Pagination next={gotoNext} prev={gotoPrev} current={page} data={cats} limit={limit}/>
+
+        <div className="card-container flex flex-wrap justify-around">
+          <Cats
+            cats={cats}
+            loading={loading}
+          />
+        </div>
+      </RouteContainer>
     </>
   )
 }
